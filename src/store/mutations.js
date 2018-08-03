@@ -1,0 +1,18 @@
+import * as Types from './mutations-type';
+
+const mutations = {
+    [Types.ADD_CART](state, book) {
+        // book是添加的一本书，如果有这本书累加的是数量，如果没有数量，为1，放到cartList中
+        let product = state.cartList.find(item => item.bookId === book.bookId);
+        if(product) {
+            product.bookCount += 1; // 注意，不能只改值，还要更新掉原数组，否则不会刷新
+            state.cartList = [...state.cartList]
+        } else {
+            product.bookCount = 1;
+            // 用新数组替换老数组state.cartList = [...state.cartList,book];也可以
+            state.cartList.push(book)
+        }
+    }
+};
+
+export default mutations;
