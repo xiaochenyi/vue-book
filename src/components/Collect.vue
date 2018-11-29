@@ -1,5 +1,6 @@
 <template>
     <div>
+        <m-header>收藏页面</m-header>
         Collection
     </div>
 </template>
@@ -9,6 +10,7 @@
     // 辅助函数 语法糖
     import {mapState, mapGetters} from 'vuex';
     export default {
+        components: {MHeader},
         computed: {
             // 等价于
             /**

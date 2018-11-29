@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简易小todo</title>
+    <script src="node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model="val" @keyup.13="add"/>
+    <ul>
+        <li v-for="(a,index) in list">{{a}} <button @click="del(index)">删除</button></li>
+    </ul>
+
+    <ul>
+        <li v-for="i of 5">{{i}}</li>
+    </ul>
+
+    <ul>
+        <li v-for="(value, key) of obj">{{key}} : {{value}}</li>
+    </ul>
+</div>
+
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            list:[],
+            val:'',
+            obj:{
+                name:'cy',
+                age:18
+            }
+        },
+        methods:{
+            add() {
+                this.list.unshift(this.val);
+                this.val = '';
+            },
+            del(i) {
+                this.list = this.list.filter((item, index)=> index !== i)
+            }
+        }
+    })
+</script>
+</body>
+</html>

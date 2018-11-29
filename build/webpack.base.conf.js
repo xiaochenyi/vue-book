@@ -26,7 +26,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      '@': resolve('src'), //指向了src的绝对路径，但是有个缺点，ctrl键点不进去了
     }
   },
   module: {

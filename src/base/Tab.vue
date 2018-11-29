@@ -8,6 +8,10 @@
             <i class="iconfont icon-yemian"></i>
             <span>列表页</span>
         </router-link>
+        <router-link to="/collect">
+            <i class="iconfont icon-yemian"></i>
+            <span>收藏</span>
+        </router-link>
         <router-link to="/add">
             <i class="iconfont icon-tianjia"></i>
             <span>添加</span>
@@ -15,7 +19,16 @@
     </div>
 </template>
 
+<!--
+    display:flex 伸缩盒布局
+    direction 默认是row，可以改成column
+    justify-content:center 垂直居中
+    align-item:center 横向居中
+    flex:1 每份占1
 
+    router-link-exact-active 精准匹配 /home/a
+    router-link-active 只要存在有/home就可以
+-->
 <style scoped lang="less">
     .footer{
         position: fixed;

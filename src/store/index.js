@@ -14,6 +14,6 @@ export default new Vuex.Store({
     state,
     mutations,
     getters,
-    strict: true,
+    strict: true, // 只能通过mutation来更改状态， mutation不支持异步
     plugins: [logger()]
 })
